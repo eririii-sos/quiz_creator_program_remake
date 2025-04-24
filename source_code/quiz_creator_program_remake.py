@@ -10,3 +10,7 @@ import os
 
 # Initialize colorama
 init(autoreset=True)
+
+# Custom prompt format
+def user_input(prompt, color=Fore.YELLOW):
+    return input(color + prompt + Fore.RESET)
