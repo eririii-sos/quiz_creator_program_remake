@@ -25,3 +25,9 @@ def menu_banner():
     print(f"Press {Fore.RED}{Style.BRIGHT}2{Fore.RESET}to {Fore.RED}{Style.BRIGHT}CONTINUE{Fore.RESET}")
     print("|" + " " * 48)
     print("=" * 50)
+
+def quiz_creator():
+    menu_banner()
+
+if __name__ == "__main__":
+    quiz_creator()
