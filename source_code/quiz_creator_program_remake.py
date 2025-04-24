@@ -18,6 +18,10 @@ def user_input(prompt, color=Fore.YELLOW):
 # Quiz creator menu banner
 def menu_banner():
     os.system("cls" if os.name == "nt" else "clear")
+    print("=" * 50)
+    print("|" + " " * 48)
     print(Fore.YELLOW + Style.BRIGHT + "🧠 Welcome to the Quiz Creator ! 🧠")
     print(f"\nPress {Fore.GREEN}{Style.BRIGHT}1{Fore.RESET}to {Fore.GREEN}{Style.BRIGHT}CONTINUE{Fore.RESET}")
     print(f"Press {Fore.RED}{Style.BRIGHT}2{Fore.RESET}to {Fore.RED}{Style.BRIGHT}CONTINUE{Fore.RESET}")
+    print("|" + " " * 48)
+    print("=" * 50)
