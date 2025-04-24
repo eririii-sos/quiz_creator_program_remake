@@ -19,11 +19,15 @@ def user_input(prompt, color=Fore.YELLOW):
 def menu_banner():
     os.system("cls" if os.name == "nt" else "clear")
     print("=" * 50)
-    print("|" + " " * 48)
-    print(Fore.YELLOW + Style.BRIGHT + "🧠 Welcome to the Quiz Creator ! 🧠")
-    print(f"\nPress {Fore.GREEN}{Style.BRIGHT}1{Fore.RESET}to {Fore.GREEN}{Style.BRIGHT}CONTINUE{Fore.RESET}")
-    print(f"Press {Fore.RED}{Style.BRIGHT}2{Fore.RESET}to {Fore.RED}{Style.BRIGHT}CONTINUE{Fore.RESET}")
-    print("|" + " " * 48)
+    print("|" + " " * 48 + "|")
+    print("|" + " " * 10 +
+        f"{Fore.YELLOW}{Style.BRIGHT}🧠 WELCOME TO QUIZ CREATOR 🧠{Fore.RESET}" + " " * 9 + "|")
+    print("|" + " " * 48 + "|")
+    print("|" + " " * 15 +
+        f"Press {Fore.GREEN}{Style.BRIGHT}1{Fore.RESET} to {Fore.GREEN}{Style.BRIGHT}CONTINUE{Fore.RESET}" + " " * 14 + "|")
+    print("|" + " " * 17 +
+        f"Press {Fore.RED}{Style.BRIGHT}2{Fore.RESET} to {Fore.RED}{Style.BRIGHT}EXIT{Fore.RESET}" + " " * 16 + "|")
+    print("|" + " " * 48 + "|")
     print("=" * 50)
 
 def quiz_creator():
