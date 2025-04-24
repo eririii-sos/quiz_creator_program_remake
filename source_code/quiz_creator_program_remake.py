@@ -7,3 +7,6 @@
 # Import dependencies
 from colorama import init, Fore, Style, Back
 import os
+
+# Initialize colorama
+init(autoreset=True)
