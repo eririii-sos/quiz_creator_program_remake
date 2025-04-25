@@ -45,8 +45,17 @@ def ask_question():
     
     return question, answer_options, correct
 
+# Write and save all the input inside the text file
+def save_question(file, question, answer_options, correct):
+    file.write(f"Question: {question}\n")
+    for key, val in answer_options.items():
+        file.write(f"   {key} {val}\n")
+    file.write(f"Correct Answer: {correct}\n")
+    file.write("-" * 50 + "\n")
+
 def quiz_creator():
     menu_banner()
+    file_name = "quiz_creator_questions.txt" # Assign a text file 
 
     # Get user's choice 
     option = user_input("\nSelect an option: ").strip()
