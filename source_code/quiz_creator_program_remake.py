@@ -36,7 +36,10 @@ def ask_question():
     question = user_input("Question:")
     answer_options = {opt: user_input(f"Option {opt}: ") for opt in ['a', 'b', 'c', 'd']}
 
-    return question, answer_options
+    # Ask user for the correct answer
+    correct = user_input("Correct answer (a/b/c/d): ").lower()
+
+    return question, answer_options, correct
 
 def quiz_creator():
     menu_banner()
