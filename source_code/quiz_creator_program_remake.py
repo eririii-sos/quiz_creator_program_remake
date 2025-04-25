@@ -33,13 +33,13 @@ def menu_banner():
 # Ask user for the question
 def ask_question():
     print(Back.YELLOW + Fore.BLACK + Style.BRIGHT + "\nAdd a new question")
-    question = user_input("Question:")
+    question = user_input("Question: ")
     answer_options = {opt: user_input(f"Option {opt}: ") for opt in ['a', 'b', 'c', 'd']}
 
     # Ask user for the correct answer
     correct = ""
     while correct not in answer_options:
-        correct = user_input("Correct answer (a/b/c/d): ").lower()
+        correct = user_input("\nCorrect answer (a/b/c/d): ").lower()
         if correct not in answer_options: # Error handling for invalid input
             print("Invalid input! Please only enter a, b, c, or d.")
     
@@ -69,10 +69,13 @@ def quiz_creator():
     
     # Open text file and allow input to be saved
     with open(file_name, "a") as file:
+        while True:   
             q, opts, ans = ask_question()
             save_question(file, q, opts, ans)
 
-    ask_question()
-    
+            if user_input("\nAdd another question? (yes/no): ").strip().lower() != "yes":
+                print(f"\n 🎉 All done! Your questions are saved in '{file_name}'")
+                break
+
 if __name__ == "__main__":
     quiz_creator()
