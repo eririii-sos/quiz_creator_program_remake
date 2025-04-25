@@ -67,6 +67,11 @@ def quiz_creator():
         print("\nExiting the program... Goodbye!")
         return
     
+    # Open text file and allow input to be saved
+    with open(file_name, "a") as file:
+            q, opts, ans = ask_question()
+            save_question(file, q, opts, ans)
+
     ask_question()
     
 if __name__ == "__main__":
