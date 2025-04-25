@@ -49,7 +49,7 @@ def ask_question():
 def save_question(file, question, answer_options, correct):
     file.write(f"Question: {question}\n")
     for key, val in answer_options.items():
-        file.write(f"   {key} {val}\n")
+        file.write(f"   {key}) {val}\n")
     file.write(f"Correct Answer: {correct}\n")
     file.write("-" * 50 + "\n")
 
