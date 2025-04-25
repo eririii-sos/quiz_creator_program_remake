@@ -20,8 +20,8 @@ def menu_banner():
     os.system("cls" if os.name == "nt" else "clear")
     print("=" * 50)
     print("|" + " " * 48 + "|")
-    print("|" + " " * 10 +
-        f"{Fore.YELLOW}{Style.BRIGHT}🧠 WELCOME TO QUIZ CREATOR 🧠{Fore.RESET}" + " " * 9 + "|")
+    print("|" + " " * 8 +
+        f"{Fore.YELLOW}{Style.BRIGHT}🧠 WELCOME TO THE QUIZ CREATOR 🧠{Fore.RESET}" + " " * 7 + "|")
     print("|" + " " * 48 + "|")
     print("|" + " " * 17 +
         f"Press {Fore.GREEN}{Style.BRIGHT}1{Fore.RESET} to {Fore.GREEN}{Style.BRIGHT}START{Fore.RESET}" + " " * 15 + "|")
@@ -29,6 +29,14 @@ def menu_banner():
         f"Press {Fore.RED}{Style.BRIGHT}2{Fore.RESET} to {Fore.RED}{Style.BRIGHT}EXIT{Fore.RESET}" + " " * 16 + "|")
     print("|" + " " * 48 + "|")
     print("=" * 50)
+
+# Ask user for the question
+def ask_question():
+    print(Back.YELLOW + Fore.BLACK + Style.BRIGHT + "\nAdd a new question")
+    question = user_input("Question:")
+    answer_options = {opt: user_input(f"Option {opt}: ") for opt in ['a', 'b', 'c', 'd']}
+
+    return question, answer_options
 
 def quiz_creator():
     menu_banner()
@@ -42,6 +50,8 @@ def quiz_creator():
     else:
         print("\nExiting the program... Goodbye!")
         return
-
+    
+    ask_question()
+    
 if __name__ == "__main__":
     quiz_creator()
