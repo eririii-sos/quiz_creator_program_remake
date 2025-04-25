@@ -33,5 +33,15 @@ def menu_banner():
 def quiz_creator():
     menu_banner()
 
+    # Get user's choice 
+    option = user_input("\nSelect an option: ").strip()
+
+    if option == "1":
+        print("\nStarting the program...")
+
+    else:
+        print("\nExiting the program... Goodbye!")
+        return
+
 if __name__ == "__main__":
     quiz_creator()
