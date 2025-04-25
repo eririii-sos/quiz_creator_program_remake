@@ -37,8 +37,12 @@ def ask_question():
     answer_options = {opt: user_input(f"Option {opt}: ") for opt in ['a', 'b', 'c', 'd']}
 
     # Ask user for the correct answer
-    correct = user_input("Correct answer (a/b/c/d): ").lower()
-
+    correct = ""
+    while correct not in answer_options:
+        correct = user_input("Correct answer (a/b/c/d): ").lower()
+        if correct not in answer_options: # Error handling for invalid input
+            print("Invalid input! Please only enter a, b, c, or d.")
+    
     return question, answer_options, correct
 
 def quiz_creator():
